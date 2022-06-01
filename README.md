@@ -1,5 +1,6 @@
 # Create an EC2 server,Install Nginx in it, Create a sample index.html page and deploy it on that Nginx server, Configure domain and apply SSL, Configure automation script for SSL renewal.
-Step1 : Create an EC2 Instance 
+
+**Step1 : Create an EC2 Instance**
 
 Login to AWS Management Console and open EC2 service.
 You can either go to Services -> Compute -> EC2
@@ -13,7 +14,7 @@ Scroll down the page and click on View Instances, You will see like below
 
 ![image](https://user-images.githubusercontent.com/67600604/171338086-a56c4cbd-a8f0-439e-9685-ba2dcd10361b.png)
 
-Step2 : Install Nginx in it
+**Step2 : Install Nginx in it**
 
 Connect your Instance with putty with the key we have downloaded at the time of launching the instance.
 
@@ -25,13 +26,13 @@ sudo yum install nginx
 
 sudo systemctl start/status/stop nginx - to start stop and check status of the nginx server
 
-Step3 : Create a sample index.html page and deploy it on that Nginx server
+**Step3 : Create a sample index.html page and deploy it on that Nginx server**
 
 Now, go into the file location /usr/share/nginx/html folder and create a file named as index.html. Now restart the nginx server and search for the public ip in your local browser and you will be able to see your page of index.html file 
 
 ![Screenshot (176)](https://user-images.githubusercontent.com/67600604/171344033-2d60f166-dad6-4e17-ae76-e4e4eac7956e.png)
 
-Step4 : Configure domain and apply SSL, Configure automation script for SSL renewal.
+**Step4 : Configure domain and apply SSL, Configure automation script for SSL renewal.**
 
 To Configure the domain, we have to  purchase the domain. In our case,I have taken free domain name from the freenom.com, i.e. shruti1.ga
 Sign in to freenom.com and there is a service named as Route53 in amazon we will create hosted zone ther and will get 4 nameservers there, have to add those nameserver ther in the freenom DNS settings to make it connected with the IP address. Create record in the hosted zone and set the TTL there to update it after the given time period. In our case, I have assigned 60 seconds 
