@@ -18,7 +18,8 @@ Step2 : Install Nginx in it
 Connect your Instance with putty with the key we have downloaded at the time of launching the instance.
 
 ![image](https://user-images.githubusercontent.com/67600604/171338471-18328e62-3a3c-4a40-a056-3993fa5f179b.png)
-In our case, we are using AMI Linux. so , for installing nginx we will use the yum command 
+
+In our case, we are using AMI Linux. so , for installing nginx we will use the yum commands
 
 sudo yum install nginx
 
@@ -32,6 +33,37 @@ Now, go into the file location /usr/share/nginx/html folder and create a file na
 
 Step4 : Configure domain and apply SSL, Configure automation script for SSL renewal.
 
+To Configure the domain, we have to  purchase the domain. In our case,I have taken free domain name from the freenom.com, i.e. shruti1.ga
+Sign in to freenom.com and there is a service named as Route53 in amazon we will create hosted zone ther and will get 4 nameservers there, have to add those nameserver ther in the freenom DNS settings to make it connected with the IP address. Create record in the hosted zone and set the TTL there to update it after the given time period. In our case, I have assigned 60 seconds 
+
+![Screenshot (183)](https://user-images.githubusercontent.com/67600604/171348628-45592558-1875-4999-bc8f-cd7c7f48eafe.png)
+
+Now, to apply and configure SSL , 
+
+sudo yum install certbot python3-certbot-nginx
+
+Confirming the domain - sudo vim /etc/nginx/nginx.conf, it should be in this pattern
+
+server_name shruti1.ga www.shruti1.ga;
+
+Then save the file, quit your editor, and verify the syntax of your configuration edits: sudo nginx -t and then sudo systemctl reload nginx
+
+Obtaining an SSL Certificate - sudo certbot --nginx -d shruti1.ga -d www.shruti1.ga -> This runs certbot with the --nginx plugin, using -d to specify the domain names we’d like the certificate to be valid for.
+
+![Screenshot (186)](https://user-images.githubusercontent.com/67600604/171350638-114aae9a-74ec-4487-a3a1-7f74ac2dab88.png)
+
+You can see here now it is https://shruti1.ga
+
+![Screenshot (184)](https://user-images.githubusercontent.com/67600604/171350740-47048d96-9638-462a-884a-ff2a7905306a.png)
+
+
+
+
+
+
+ 
+ 
+ 
  
 
 
