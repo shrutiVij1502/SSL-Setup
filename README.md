@@ -1,4 +1,10 @@
-# Create an EC2 server,Install Nginx in it, Create a sample index.html page and deploy it on that Nginx server, Configure domain and apply SSL, Configure automation script for SSL renewal.
+# POC 1
+
+###  Create an EC2 server
+### Install Nginx in it
+### Create a sample index.html page and deploy it on that Nginx server
+### Configure domain and apply SSL, Configure automation script for SSL renewal.
+
 
 **Step1 : Create an EC2 Instance**
 
