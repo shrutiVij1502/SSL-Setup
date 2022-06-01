@@ -36,6 +36,9 @@ Step4 : Configure domain and apply SSL, Configure automation script for SSL rene
 To Configure the domain, we have to  purchase the domain. In our case,I have taken free domain name from the freenom.com, i.e. shruti1.ga
 Sign in to freenom.com and there is a service named as Route53 in amazon we will create hosted zone ther and will get 4 nameservers there, have to add those nameserver ther in the freenom DNS settings to make it connected with the IP address. Create record in the hosted zone and set the TTL there to update it after the given time period. In our case, I have assigned 60 seconds 
 
+![image](https://user-images.githubusercontent.com/67600604/171350944-ca6ddd3f-75fe-4e6c-bd52-730d7e93ea16.png)
+the above screenshot has the 4 nameservers ofour Route 53 hosted zone 
+
 ![Screenshot (183)](https://user-images.githubusercontent.com/67600604/171348628-45592558-1875-4999-bc8f-cd7c7f48eafe.png)
 
 Now, to apply and configure SSL , 
